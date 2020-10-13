@@ -1,11 +1,11 @@
-#------------------------------------------
+#---------------------------------------------------------------------------------------
 # Import modules for working with Operating Systems and Comma-Separated Value files
-#------------------------------------------
+#---------------------------------------------------------------------------------------
 import os
 import csv
-#------------------------------------------
+#------------------
 # define variables
-#------------------------------------------
+#------------------
 total_votes = 0 # create variable total_votes to increment and keep track of the Total Count of Votes.
 candidate_list = {} # create empty dictionary to store candidate names (as keys) & votes (as values)
 listofcandidates = [] # create empty list to store UNIQUE list of candidate names
