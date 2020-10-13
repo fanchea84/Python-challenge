@@ -29,28 +29,12 @@ print('Election Results')
 print(f'Total Votes: ', total_votes) # Print the total number of votes (for all candidates in the data sheet)
 print('-------------------------')
 print_count = -1 # The print_count variable is used to increment in the below FOR loop. Starting it at -1 because of the "off by one" error.
-for row in listofcandidates: # set number of FOR loop iterations equal to number of candidate names in the LISTOFCANDIDATES list
-    print_count += 1 # Increment by 1 using print_count variable
-    # print the list of UNIQUE candidates with their percentage of total votes and their number of total votes
+for row in listofcandidates:
+    # define number of iterations of for loop
+    print_count += 1
     print(f'',listofcandidates[print_count],":","{:0.2%}".format((candidate_list[listofcandidates[print_count]]/total_votes)),"(", candidate_list[listofcandidates[print_count]],")")
 print('-------------------------')
-print(f'Winner:',max(candidate_list, key=candidate_list.get)) # print the name of the winning candidate
+print(f'Winner:',max(candidate_list, key=candidate_list.get))
 #------------------------------------------
 #Save the Election Results as a TXT file
 #------------------------------------------
-with open('ElectionResults.txt', 'w') as text_file:
-    print(f'\n',
-    'Election Results','\n',
-    'Total Votes: ', total_votes,'\n',
-    '-------------------------',
-    file=text_file)
-    kvcount = -1
-    for row in listofcandidates:
-        kvcount += 1
-        print(f'',listofcandidates[kvcount],':',
-        '{:0.2%}'.format((candidate_list[listofcandidates[kvcount]]/total_votes)),'(',
-        candidate_list[listofcandidates[kvcount]],')',
-        file=text_file)
-    print(f'-------------------------','\n',
-    'Winner:',max(candidate_list, key=candidate_list.get),'\n',
-    file=text_file)
